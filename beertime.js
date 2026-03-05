@@ -182,7 +182,7 @@ function zakhooi() {
 
     else {
        // risingBeer.src = "./Countdown_beertime/images/beer_yellow.jpg";
-        risingFoam.src = "./Beertime/images/foam.jpg";
+        risingFoam.src = "./images/foam.jpg";
         document.body.style.backgroundColor = '#331814';
         glass.style.visibility = 'visible';
         glass.style.display = 'block';
