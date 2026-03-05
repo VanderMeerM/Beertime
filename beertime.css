@@ -1,0 +1,263 @@
+body {
+    overflow: hidden;
+   background-color: #331814;
+
+}
+
+.container {
+    margin-top: 30px;
+    position: relative;
+    text-align: center;
+}
+
+
+#glass {
+    border: 10px solid lightgray;
+    border-top: none;
+    border-radius: 5px;
+    width: 580px;
+    height: 528px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative; 
+    z-index: 2;
+}
+
+/* was #glass:after */
+#holder {
+    content: "";
+    position: absolute;
+    /* right: -50px;  */
+    top: 25px;
+    width: 60px;
+    height: 190px;
+    border: 18px solid lightgray;
+    border-radius: 25px;
+    }
+
+#glass_fr16 {
+    border: 10px solid lightgray;
+    border-top: none;
+    border-radius: 5px;
+    width: 145px;
+    height: 132px;
+    overflow: hidden;
+    position: absolute;
+    top: 85%;
+    right: 48%;
+}
+
+#rising_foam {
+    position: absolute;
+    max-width: 560px;
+           
+}
+
+#rising_beer {
+    position: relative;
+    z-index: 1;
+    background: rgb(255,235,69);
+    width: 580px;
+    height: 409px;
+    background-image: 
+        radial-gradient(circle, rgb(255, 203, 34) 10%, rgb(218, 160, 3) 70%, rgb(192, 126, 4) 100%);
+}
+
+.container_beertap {
+    position: relative;
+    left: 125px;
+    top: -70px;
+    transform: scale(0.8);
+}
+
+#onlytap {
+    position: relative;
+    height: 278px;
+    width: 82px;
+}
+
+#beertap_notap {
+    position: relative;
+}
+
+
+#flowingbeer {
+    position: relative;
+    width: 25px;
+    height: 250px;
+    background: #f7c600;
+    transform: rotate(14deg);
+}
+
+img {
+    margin: 0 auto;
+   /* animation: filling 3s;  */
+
+}
+
+@keyframes glass_to_straight_position {
+    0% {
+        transform: rotate(20deg)
+    }
+
+    10% {
+        transform: rotate(20deg)
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes filling {
+    from {
+        margin-top: 200px;
+    }
+
+    to {
+        margin-top: 0px;
+    }
+}
+
+
+.container2 {
+    position: relative;
+    z-index: 1;
+    height: 530px;
+  /*  background-color: #331814; */
+    margin-top: 10px; /* was -25px */
+   
+}
+
+#filled {
+    text-align: center;
+    font-size: small;
+    color: #f7c600;
+   }
+
+#countdown,
+#beertime,
+#weekend {
+    font-size: 70px;
+    text-align: center;
+    color: #f7c600;
+}
+
+#beertime {
+    margin-top: 80px;
+}
+
+.brown_background {
+  /*  background-color: #331814; */
+  height: 15px;
+}
+
+/*
+#countdown {
+    margin-top: 80px;
+}
+*/
+
+@media (max-width: 1200px) {
+
+    #glass, 
+    #rising_beer {
+        width: 450px;
+    }
+    #rising_foam {
+        max-width: 430px;
+        height: 90px;
+    }
+}
+
+@media (max-width: 785px) {
+    #glass_fr16 {
+        top: 65%;
+    }
+}
+
+@media (max-width: 756px) {
+    .container_beertap {
+        max-height: 424px;
+    }
+
+   /*
+    #countdown {
+        margin-top: 200px;
+    }
+    */
+
+    #glass_fr16 {
+        top: 95%;
+        right: 40%;
+    }
+
+    #flowingbeer {
+        height: 270px;
+    }
+
+    @media (max-width: 600px) {
+        #beertap_notap {
+            left: -30px;
+        }
+    }
+
+
+    @media (max-width: 560px) {
+        #beertap_notap {
+            left: -60px;
+        }
+    }
+
+
+    @media (max-width: 500px) {
+        .container2 {
+            min-width: 500px;
+        }
+
+        #beertap_notap {
+            left: -70px;
+        }
+
+        #glass, 
+        #rising_beer {
+            width: 350px;
+        }
+        #rising_foam {
+            max-width: 330px;
+        }
+
+    }
+
+    @media (max-width: 450px) {
+        #beertap_notap {
+            left: -90px;
+        }
+    }
+
+    @media (max-width: 420px) {
+        #beertap_notap {
+            left: -110px;
+        }
+    }
+
+    @media (max-width: 360px) {
+        #beertap_notap {
+            left: -120px;
+        }
+
+        #glass, 
+        #rising_beer {
+            width: 250px;
+        }
+        #rising_foam {
+            max-width: 230px;
+        }
+    }
+
+    @media (max-width: 300px) {
+        #beertap_notap {
+            left: -130px;
+        }
+    }
+}
