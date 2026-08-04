@@ -27,7 +27,7 @@ class Bubbles{
     createBubbles(){
         this.bubbleArray = [];
         let bubbleCount = Math.floor(this.options.bubbleDensity * (this.canvas.width * this.canvas.height / 2000))
-        //console.log(bubbleCount)
+         //console.log(bubbleCount)
         for(let i = 0; i<bubbleCount; i++){
             this.createBubble(i)
         }
