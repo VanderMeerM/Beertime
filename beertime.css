@@ -40,9 +40,8 @@ body {
 }
 
 #holder {
-    content: "";
     position: absolute;
-    right: -50px; 
+    left: 570px;
     top: 25px;
     width: 60px;
     height: 190px;
