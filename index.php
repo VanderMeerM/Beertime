@@ -20,6 +20,12 @@
 
 <?php 
 
+/*
+Wishlist: 
+bubbles
+
+*/
+
 echo '
 
 <body> 
