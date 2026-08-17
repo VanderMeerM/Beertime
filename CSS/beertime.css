@@ -1,3 +1,7 @@
+:root {
+    --width: 580px;
+}
+
 body {
     overflow: hidden;
    background-color: #331814;
@@ -31,7 +35,7 @@ body {
     border: 10px solid lightgray;
     border-top: none;
     border-radius: 5px;
-    width: 580px;
+    width: var(--width);
     height: 528px;
     margin: 0 auto;
     overflow: hidden;
@@ -63,15 +67,14 @@ body {
 
 #rising_foam {
     position: absolute;
-    max-width: 560px;
-           
+    width: var(--width);           
 }
 
 #rising_beer {
     position: relative;
     z-index: 1;
     background: rgb(255,235,69);
-    width: 580px;
+    width: var(--width);
     height: 409px;
     background-image: 
         radial-gradient(circle, rgb(255, 203, 34) 10%, rgb(218, 160, 3) 70%, rgb(192, 126, 4) 100%);
