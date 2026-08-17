@@ -6,11 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="./images/beer.ico">
-    <script defer src="./beertime.js"></script>
-     <script defer src="./bubbles.js"></script>
+    <script defer src="./JS/beertime.js"></script>
 
-    <link href="./bubbles.css" rel="stylesheet" type="text/css" /> 
-    <link href="./beertime.css" rel="stylesheet" type="text/css" />
+    <!--  <script defer src="./bubbles.js"></script>
+     <link href="./bubbles.css" rel="stylesheet" type="text/css" />  -->
+
+    <link href="./CSS/beertime.css" rel="stylesheet" type="text/css" />
 
     <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
 
