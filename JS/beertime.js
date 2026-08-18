@@ -11,6 +11,8 @@ const risingFoam = document.getElementById('rising_foam');
 const risingBeer = document.getElementById('rising_beer');
 const risingBubbles = document.getElementById('bubbles');
 const weekend = document.getElementById('weekend');
+let defaultBeerHour = 16; 
+
 let numCeleb = 0; 
 
 let zakHooi;
@@ -67,7 +69,6 @@ function zakhooi_Fr16() {
     divGlass.style.visibility = 'visible';
 
     countDown.style.marginTop = '10%';
-
 
     onlyTap.style.transform = 'rotate(-50deg)';
 
@@ -130,6 +131,11 @@ zakhooi();
     zakhooi(), 1000
 })
 
+console.log(beerHour);
+
+if (beerHour) {
+    defaultBeerHour == beerHour
+}
 
 // zakhooi_Fr16(); voor testdoeleinden activeren 
 
@@ -141,7 +147,7 @@ function zakhooi() {
     const now = new Date().getTime();
 
     const daysUntilFriday = 5 - new Date().getDay();
-    const beerTime = new Date(year, new Date().getMonth(), (new Date().getDate() + daysUntilFriday), 16).getTime();
+    const beerTime = new Date(year, new Date().getMonth(), (new Date().getDate() + daysUntilFriday), defaultBeerHour).getTime();
     const mondayBeforeFriday = daysUntilFriday - 4;
     const startOnMonday = new Date(year, new Date().getMonth(), (new Date().getDate() + mondayBeforeFriday), 8).getTime();
 
@@ -149,7 +155,7 @@ function zakhooi() {
     let beerCovered = (beerTime - now) / (beerTime - startOnMonday);
 
 
-  if ( countDownTime < 0 && (dayOfBeerTime == 5 && hourOfBeerTime == 16) ) // Vrijdag 16 uur.. 
+  if ( countDownTime < 0 && (dayOfBeerTime == 5 && hourOfBeerTime == defaultBeerHour) ) // Vrijdag 16 uur (of ingesteld uur).. 
        
      {
 
