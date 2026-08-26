@@ -24,7 +24,7 @@
 Wishlist: 
 
 - bubbles
-- uur (en evt. minuten) wijzigen (tussen 12- 18; via $_GET) 
+- uur (en evt. minuten) wijzigen (tussen 12- 18; via $_GET) v 
 
 */
 
@@ -33,10 +33,16 @@ if ( ($_GET['hour']) && ($_GET['hour'] >= 12 && $_GET['hour'] <= 18) ) {
     $hour = $_GET['hour'];
 }
 
+if ( ($_GET['minutes']) && ($_GET['minutes'] == 30) ) {
+    $minute = $_GET['minutes'];
+}
+
 ?>
 
 <script>
     let beerHour = <?php echo json_encode($hour); ?>;
+    let beerMinute = <?php echo json_encode($minute); ?>;
+
 </script>
 
 
