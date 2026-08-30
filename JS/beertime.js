@@ -159,15 +159,14 @@ function zakhooi() {
     let beerCovered = (beerTime - now) / (beerTime - startOnMonday);
 
 
-  if ( countDownTime < 0 && (dayOfBeerTime == 5 && hourOfBeerTime == defaultBeerHour && minuteOfBeerTime == defaultBeerMinute) ) // Vrijdag 16 uur (of ingesteld uur).. 
-       
+    if ( countDownTime < 0 && (dayOfBeerTime == 5 && hourOfBeerTime == defaultBeerHour && minuteOfBeerTime == defaultBeerMinute) ) // Vrijdag vanaf ingestelde borreltijd (standaard: 16 uur).. 
      {
 
         zakhooi_Fr16();
 
     }
-    else if (dayOfBeerTime == 0 || dayOfBeerTime == 6 ||  // Als het zaterdag of zondag is...
-        (dayOfBeerTime == 5 && hourOfBeerTime >= 17) ||   // ..of vrijdag (na) 17 uur..
+    else if (dayOfBeerTime == 6 || dayOfBeerTime == 0 ||  // Als het zaterdag of zondag is...
+        (dayOfBeerTime == 5 && hourOfBeerTime >= (defaultBeerHour + 1) && minuteOfBeerTime >= defaultBeerMinute) ||   // ..of vrijdag een uur na ingestelde borreltijd (standaard: 17 uur)..
         dayOfBeerTime == 1 && hourOfBeerTime <= 7) {    //  .. of maandag voor 7 uur..
 
         const textWeekend = "<img src='./images/beer.jpg'> <p id='weekend'> Weekend!";
