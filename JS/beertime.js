@@ -69,7 +69,7 @@ function zakhooi_Fr16() {
     document.body.style.backgroundColor = '#331814';
     divGlass.style.visibility = 'visible';
 
-    countDown.style.marginTop = '10%';
+    countDown.textContent = '';
 
     onlyTap.style.transform = 'rotate(-50deg)';
 
@@ -132,12 +132,16 @@ zakhooi();
     zakhooi(), 1000
 })
 
+// Bieruur is mogelijk tussen 12 en 18 uur..
+
 if ( (beerHour >= 12) && (beerHour <= 18) ) {
-    defaultBeerHour = beerHour;
+    defaultBeerHour = parseInt(beerHour);
 }
 
+// om het halve of het hele uur.. 
+
 if (beerMinute == 30) {
-    defaultBeerMinute = beerMinute;
+    defaultBeerMinute = parseInt(beerMinute);
 }
 
 // zakhooi_Fr16(); voor testdoeleinden activeren 
@@ -158,20 +162,26 @@ function zakhooi() {
     let countDownTime = (beerTime - now) / 1000;
     let beerCovered = (beerTime - now) / (beerTime - startOnMonday);
 
+    if ( (countDownTime < 0 && dayOfBeerTime == 5) // op vrijdag..
 
-    if ( countDownTime < 0 && (dayOfBeerTime == 5 && hourOfBeerTime == defaultBeerHour && minuteOfBeerTime == defaultBeerMinute) ) // Vrijdag vanaf ingestelde borreltijd (standaard: 16 uur).. 
-     {
-
+        && 
+         ( 
+        (hourOfBeerTime == defaultBeerHour && minuteOfBeerTime > defaultBeerMinute) || // ..vanaf ingestelde borreltijd met heel uur (standaard: 16 uur).. 
+        (hourOfBeerTime == (defaultBeerHour + 1) && minuteOfBeerTime < defaultBeerMinute)  // ..vanaf ingestelde borreltijd met half uur 
+        )
+        ) 
+    {
         zakhooi_Fr16();
 
     }
     else if (dayOfBeerTime == 6 || dayOfBeerTime == 0 ||  // Als het zaterdag of zondag is...
-        (dayOfBeerTime == 5 && hourOfBeerTime >= (defaultBeerHour + 1) && minuteOfBeerTime >= defaultBeerMinute) ||   // ..of vrijdag een uur na ingestelde borreltijd (standaard: 17 uur)..
-        dayOfBeerTime == 1 && hourOfBeerTime <= 7) {    //  .. of maandag voor 7 uur..
+        (dayOfBeerTime == 5 && hourOfBeerTime == (defaultBeerHour + 1) && minuteOfBeerTime >= defaultBeerMinute) ||   // ..of vrijdag een uur na ingestelde borreltijd (standaard: 17 uur)..
+        (dayOfBeerTime == 5 && hourOfBeerTime >= (defaultBeerHour + 2) ) ||  // ..of vanaf minstens twee uur later..
+         dayOfBeerTime == 1 && hourOfBeerTime <= 7) {    //  .. of maandag voor 7 uur..
 
         const textWeekend = "<img src='./images/beer.jpg'> <p id='weekend'> Weekend!";
         weekend.innerHTML = textWeekend;
-        document.body.style.backgroundImage = "";
+        document.body.style.backgroundImage = ""; 
         document.querySelector('.container_beertap').style.display = 'none';
         document.title = 'Fijn weekend!';
         glass.style.display = 'none';
